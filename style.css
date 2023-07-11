@@ -8,3 +8,22 @@ body {
     align-items: center;
     justify-content: center;
 }
+.photosoftheday{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 650px){
+    /* body { */
+        /* display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center; */
+    /* } */
+    
+    .photosoftheday{
+        flex-direction: row;
+    }
+  }
