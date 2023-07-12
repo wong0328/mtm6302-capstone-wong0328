@@ -13,14 +13,27 @@
 <body>
 
     <h1>Astonomy Picture of The Day</h1>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
+    <ul>
+        <li class="home"><a href="index.html">Home</a></li>
+        <li class="favourites"><a href="favourites.html">Favourites</a></li>
+      </ul>
+      </nav>
+
+
+    <!-- <nav class="navbar bg-body-tertiary">
         <form class="container-fluid justify-content-start">
           <button class="btn btn-outline-success me-2" type="button">Home</button>
           <button class="btn btn-sm btn-outline-secondary" type="button">Favourites</button>
         </form>
-      </nav>
+      </nav> -->
 
       <img src="photos/Mars.png" class="img-fluid" alt="...">
+      
+      <div class="img-wrapper"><img src="photos/heart.png" width = "50" height = "50"> <a href="favourites.html"></a></div>
+      
+      
+      <i class="fa-regular fa-heart-circle-plus" style="color: #ffffff;"></i>
 
       <label for="date-input">Select a date:</label>
       <input type="date" id="date-input" max="">
