@@ -61,3 +61,14 @@ body {
     margin-left: 10px;
   }
 
+  .photo{
+    margin: 30px;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+  }
+
+
+  .trash{
+    margin: 10px;
+  }
