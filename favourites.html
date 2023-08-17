@@ -15,15 +15,31 @@
             <li class="favourites"><a href="favourites.html">Favourites</a></li>
           </ul>
           </nav>
-    <h1>Favourites:</h1>
-    <div class="photosofthedayfavouritespage">
 
-        <img src="photos/nasaone.png" class="img-thumbnail" alt="...">
-        <img src="photos/nasatwo.png" class="img-thumbnail" alt="...">
-        <img src="photos/nasathree.png" class="img-thumbnail" alt="...">
-        <img src="photos/nasafour.png" class="img-thumbnail" alt="...">
+    <h1>Favourites:</h1>
+   
+    <div class="images" id="images">
+
+
+        <img src="photos/nasaone.png" class="img-thumbnail" alt="imageone">
+        <img src="photos/nasatwo.png" class="img-thumbnail" alt="imagetwo">
+        <img src="photos/nasathree.png" class="img-thumbnail" alt="imagethree">
+        <img src="photos/nasafour.png" class="img-thumbnail" alt="imagefour">
         </div>
         
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+          
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+          
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+          </div>
+
+
         <img src="photos/trash.png" class="trash" alt="..." width = "40" height = "40">
 
         <div class="photo">
@@ -39,6 +55,6 @@
 
 
 
-
+<script src="scripts.js"></script>
 </body>
 </html>
