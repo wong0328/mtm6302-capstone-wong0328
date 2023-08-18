@@ -1,15 +1,13 @@
+const dateInput = document.getElementById('date-input')
+
 const currentDate = new Date().toISOString().slice(0, 10);
-console.log(document.getElementById('date-input'))
-document.getElementById('date-input').max=currentDate
 
+console.log('dateInput', dateInput);
+console.log(currentDate, currentDate);
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+dateInput.max = currentDate;
 
-
-// Get the modal
-const modal = document.getElementById("myModal");
-
+/*
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 const img = document.getElementById("imageone");
 const modalImg = document.getElementById("img01");
@@ -34,27 +32,37 @@ span.onclick = function() {
 
 
 
+*/
 
 
 
 
+dateInput.addEventListener('change', function (e) {
+    
+    const query_date = dateInput.value;
+    console.log('query_date', query_date);
+    if(query_date.length) getNASAData(query_date);
+    
+    
+});
+
+function getNASAData(query_date) {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=Wa9waKY10nfMfQhqVqZP3x5yBKN6o1WbtOReOtjO&date=${query_date
+    }`)
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector('#image-container').innerHTML = `
+        <img src = "${data.url}" alt="${data.title}">
+        <div class="card-body">
+        <h3>${data.title}</h3>
+        <p>${data.explanation}</p>
+        </div>
+        `
+    })    
+}
 
 
-
-
-const date = document.querySelector('#date').value
-
-fetch(`ttps://api.nasa.gov/planetary/apod?api_key=Wa9waKY10nfMfQhqVqZP3x5yBKN6o1WbtOReOtjO}&date=${date}`)
-.then(response => response.json())
-.then(data => {
-    document.querySelector('#image-container').innerHTML = `
-    <img src = "${data.url}" alt="${data.title}">
-    <div class="card-body">
-    <h3>${data.title}</h3>
-    <p>${data.explanation}</p>
-    </div>
-    `
-})
+/*
 
 const pictures = []
 
@@ -96,3 +104,4 @@ const span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+*/
