@@ -62,24 +62,27 @@ function getNASAData(query_date) {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const favouriteButtons = document.querySelectorAll(".favourite-button");
-  
-    favouriteButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const imageContainer = button.parentElement;
-        const imageSrc = imageContainer.querySelector("img").src;
-  
-        saveToFavourites(imageSrc);
-      });
-    });
-  
-    function saveToFavourites(imageSrc) {
-      let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-      favourites.push(imageSrc);
-      localStorage.setItem("favourites", JSON.stringify(favourites));
-  
-      alert("Image added to favourites!");
+let favoritePhotos = [];
+
+
+function markAsFavorite(photoId) {
+    const photo = photos.find(photo => photo.id === photoId);
+    if (photo) {
+        favoritePhotos.push(photo);
     }
-  });
+}
+
+function saveFavoritesToLocalStorage() {
+    localStorage.setItem('favoritePhotos', JSON.stringify(favoritePhotos));
+}
+
+
+function loadFavoritesFromLocalStorage() {
+    const storedFavorites = localStorage.getItem('favoritePhotos');
+    if (storedFavorites) {
+        favoritePhotos = JSON.parse(storedFavorites);
+
+    }
+}
+
   
