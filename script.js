@@ -62,25 +62,27 @@ function getNASAData(query_date) {
 }
 
 
-let favoritePhotos = [];
 
 
-function markAsFavorite(photoId) {
+let favouritePhotos = [];
+
+
+function markAsFavourite(photoId) {
     const photo = photos.find(photo => photo.id === photoId);
     if (photo) {
-        favoritePhotos.push(photo);
+        favouritePhotos.push(photo);
     }
 }
 
-function saveFavoritesToLocalStorage() {
-    localStorage.setItem('favoritePhotos', JSON.stringify(favoritePhotos));
+function saveFavouritesToLocalStorage() {
+    localStorage.setItem('favouritePhotos', JSON.stringify(favouritePhotos));
 }
 
 
-function loadFavoritesFromLocalStorage() {
-    const storedFavorites = localStorage.getItem('favoritePhotos');
-    if (storedFavorites) {
-        favoritePhotos = JSON.parse(storedFavorites);
+function loadFavouritesFromLocalStorage() {
+    const storedFavourites = localStorage.getItem('favouritePhotos');
+    if (storedFavourites) {
+        favouritePhotos = JSON.parse(storedFavourites);
 
     }
 }
