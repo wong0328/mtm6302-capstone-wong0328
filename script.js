@@ -62,46 +62,24 @@ function getNASAData(query_date) {
 }
 
 
-/*
-
-const pictures = []
-
-function saveImage() {
-    const image = imageContainer.innerHTMLpictures.push(image)
-    localStorage.setItem('pictures', JSON.stringify(pictures))
-    displayPictures()
-}
-
-
-
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
-
-// Get the modal
-const modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-const img = document.getElementById("imageone");
-const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("caption");
-const images = document.getElementById("photosofthedayfavouritespage")
-images.addEventListener('click', function (e) {
-   console.log(e.target)
-  modal.style.display = "block";
-    modalImg.src = "photosofthedayfavouritespage" + e.target.id + ".png" ; 
-    captionText.innerHTML = e.target.alt;
-  })
-
-
-
-
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-*/
+document.addEventListener("DOMContentLoaded", () => {
+    const favouriteButtons = document.querySelectorAll(".favourite-button");
+  
+    favouriteButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const imageContainer = button.parentElement;
+        const imageSrc = imageContainer.querySelector("img").src;
+  
+        saveToFavourites(imageSrc);
+      });
+    });
+  
+    function saveToFavourites(imageSrc) {
+      let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+      favourites.push(imageSrc);
+      localStorage.setItem("favourites", JSON.stringify(favourites));
+  
+      alert("Image added to favourites!");
+    }
+  });
+  
