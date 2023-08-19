@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="https://kit.fontawesome.com/9ddc533104.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/9ddc533104.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
-    <h1>Astonomy Picture of The Day</h1>
-    <div id="output"><photo id="img"></photo> 
-    <nav class="navbar">
-    <ul>
-        <li class="home"><a href="index.html">Home</a></li>
-        <li class="favourites"><a href="favourites.html">Favourites</a></li>
-      </ul>
-      </nav>
-
-
-
-      
-      <h2>Photo Of The Day</h2>   
-
-      <div id="image-container" id="api">
-      <label for="date-input">Select a date:</label>
-      <input type="date" id="date-input" max="">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <nav class="navbar">
+          <ul>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li class="favourites"><a href="favourites.html">Favourites</a></li>
+          </ul>
+        </nav>
+        <div class="hero"><h1>Astonomy Picture of The Day</h1></div>
+        <div class="date">
+          <form action="">
+            <label for="date-input">Select a date:</label>
+            <input type="date" id="date-input" max="" />
+          </form>
+        </div>
       </div>
+    </header>
 
-<button id="favourite-button" class="btn btn-outline-secondary mt-3"> Mark as Favourite</button>
-<button id="remove-button" class="btn btn-outline-secondary mt-3"> Remove from Favourites</button>
+    <div id="img-result" class="img-result"></div>
+    <div id="img-fullscreen" class="img-fullscreen visibility-hidden"></div>
 
-
-
-
-<script src="script.js"></script>
-<script>
-</script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
