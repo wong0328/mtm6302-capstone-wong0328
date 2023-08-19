@@ -36,8 +36,6 @@ function getNASAData(query_date) {
 
 
 
-
-
 // -------------------------seperating 
 
 
