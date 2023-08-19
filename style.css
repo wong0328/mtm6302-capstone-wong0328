@@ -148,14 +148,23 @@ body {
 }
 
 
-.image-container{
-  width: 40%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+
+
+img{
+  max-width: 40%;
+
 }
 
+.image-container{
+  max-width: 40%;
+  align-items: center;
+}
 
+.card-body{
+  max-width: 40%;
 
+}
 
+nav{
+  align-content: center;
+}
